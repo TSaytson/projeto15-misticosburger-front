@@ -9,11 +9,12 @@ import { useState } from "react"
 export default function App() {
 
   const [ selectedProduct, setSelectedProduct ] = useState({})
-  const [  totaValue, setTotalValue ] = useState(0)
+  const [  totalValue, setTotalValue ] = useState(0)
+  const [ cart, setCart ] = useState([])
 
   return (
 
-    <UserContext.Provider value={{ selectedProduct, setSelectedProduct, totaValue, setTotalValue}}>
+    <UserContext.Provider value={{ selectedProduct, setSelectedProduct, totalValue, setTotalValue, cart, setCart}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />

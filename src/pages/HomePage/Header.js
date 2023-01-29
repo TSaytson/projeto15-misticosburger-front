@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import background from "../../assets/wallpaper2.jpg";
 
-
 export default function Header() {
 
     const userName = localStorage.getItem("name");
@@ -14,7 +13,7 @@ export default function Header() {
             <h1>Ola, {userName}</h1>
  
             <p>Os melhores burgers da cidade</p>
- 
+
         </HeaderStyle>
     );
 }

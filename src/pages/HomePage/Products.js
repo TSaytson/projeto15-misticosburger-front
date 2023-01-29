@@ -6,7 +6,7 @@ import SingleProduct from './SingleProduct';
 export default function Products({ type, products }) {
 
     return (
-        <ProductsStyle>
+        <ProductsStyle id={type}>
             <h1>{type}</h1>
             <Item>
                 {products.map(p => {

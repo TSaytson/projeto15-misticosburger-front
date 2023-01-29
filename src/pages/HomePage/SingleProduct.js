@@ -1,15 +1,26 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
+
 
 export default function SingleProduct({ product }) {
 
+    const navigate = useNavigate();
+
+    const { setSelectedProduct } = useContext(UserContext);
+
     function setProduct() {
 
-    }
+        setSelectedProduct(product);
+
+        navigate(`/productPage`)
+    }    
 
     return (
-        <Product onClick={setProduct}>
+        <Product onClick={() => setProduct()}>
             <ProductImage src={product.urlImage} alt={product.name} />
-            <ProductName>{product.name}</ProductName>      
+            <ProductName>{product.name}</ProductName>
             <ProductValue>R${product.value.toString().replace(".", ",")}0</ProductValue>
         </Product>
     );

@@ -3,10 +3,18 @@ import background from "../../assets/wallpaper2.jpg";
 
 
 export default function Header() {
+
+    const userName = localStorage.getItem("name");
+
     return (
+
         <HeaderStyle>
-        <h1>Ola, Fulano!</h1>
-        <p>Os melhores burgers da cidade</p>
+
+ 
+            <h1>Ola, {userName}</h1>
+ 
+            <p>Os melhores burgers da cidade</p>
+ 
         </HeaderStyle>
     );
 }

@@ -39,4 +39,8 @@ const Item = styled.div`
     flex-wrap: wrap;
 
     justify-content: center;
+
+    gap: 20px;
+
+    
 `

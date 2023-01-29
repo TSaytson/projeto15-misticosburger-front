@@ -9,10 +9,10 @@ export default function Products({ type, products }) {
         <ProductsStyle>
             <h1>{type}</h1>
             <Item>
-                {products.map(p => (
-
-                    <SingleProduct product={p} />
-                ))}
+                {products.map(p => {
+                   if(p.type === type)  return <SingleProduct key={p.id} product={p} />
+                
+            })}
             </Item>
         </ProductsStyle>
 
@@ -24,6 +24,7 @@ const ProductsStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 
     img {
         width: 100px;
@@ -36,4 +37,6 @@ const Item = styled.div`
     display: flex;
 
     flex-wrap: wrap;
+
+    justify-content: center;
 `

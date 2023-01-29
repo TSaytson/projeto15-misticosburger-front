@@ -33,6 +33,10 @@ export default function HomePage() {
         <>
             <Header />
             <Products type="Hamburguer" products={products} />
+            <Products type="Combo" products={products} />
+            <Products type="Bebida" products={products} />
+            <Products type="Sobremesa" products={products} />
+
         </>
     );
 }

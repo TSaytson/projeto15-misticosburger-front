@@ -2,10 +2,15 @@ import styled from "styled-components";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
 
+    const navigate = useNavigate();
+
     const { cart, setCart, totalValue, setTotalValue } = useContext(UserContext);
+
+    const userId = localStorage.getItem("userId");
 
     const newCart = cart.map(p => {
         return {
@@ -16,7 +21,7 @@ export default function CartPage() {
         }
     })
 
-    const dbCart = {...newCart, total: totalValue.toFixed(2)}
+    const dbCart = {newCart, total: totalValue.toFixed(2), userId}
 
     console.log(dbCart);
 
@@ -39,6 +44,7 @@ export default function CartPage() {
             alert("Pedido realizado com sucesso!");
             setCart([]);
             setTotalValue(0);
+            navigate(`/home`);
         });
 
         request.catch(() => {

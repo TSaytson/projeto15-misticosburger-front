@@ -29,7 +29,8 @@ export default function LoginPage() {
 		try {
 			const res = await axios.post(URL, body);
 			localStorage.setItem('token', res.data.token);
-			localStorage.setItem('name', res.data.name)
+			localStorage.setItem('name', res.data.name);
+            localStorage.setItem('userId', res.data.userId);
 			navigate('/home');
 		} catch (err) {
             setIsLoading(false)

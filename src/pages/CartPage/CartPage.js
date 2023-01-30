@@ -16,7 +16,7 @@ export default function CartPage() {
         return {
             name: p.name,
             quantity: p.quantity,
-            total: (p.value * p.quantity).toFixed(2),   
+            subTotal: (p.value * p.quantity).toFixed(2),   
         }
     })
 

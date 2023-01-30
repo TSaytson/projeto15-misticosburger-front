@@ -14,7 +14,6 @@ export default function CartPage() {
 
     const newCart = cart.map(p => {
         return {
-            id: p.id,
             name: p.name,
             quantity: p.quantity,
             total: (p.value * p.quantity).toFixed(2),   
@@ -25,14 +24,16 @@ export default function CartPage() {
 
     console.log(dbCart);
 
-    function removeProduct(id) {
+    function removeProduct(name) {
 
-        const newCart = cart.filter(p => p.id !== id);
+        const newCart = cart.filter(p => p.name !== name);
         setCart(newCart);
 
-        const product = cart.find(p => p.id === id);
+        const product = cart.find(p => p.name === name);
 
         setTotalValue(totalValue - (product.value * product.quantity));
+
+        navigate(`/home`);
 
     }
 
@@ -63,7 +64,7 @@ export default function CartPage() {
                         <p>{p.name}</p>
                         <p>R${p.value.toString().replace(".", ",")}0</p>
                         <p>{p.quantity}</p>
-                        <ion-icon name="close-circle-outline" onClick={() => removeProduct(p.id)}></ion-icon>
+                        <ion-icon name="close-circle-outline" onClick={() => removeProduct(p.name)}></ion-icon>
                     </li>
                 ))}
             </ul>

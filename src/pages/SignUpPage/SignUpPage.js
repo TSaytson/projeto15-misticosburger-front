@@ -23,7 +23,7 @@ export default function SignUpPage() {
         e.preventDefault()
         setIsLoading(true)
 
-        const URL = `${process.env.REACT_APP_API_URL}/signUp`;
+        const URL = `${process.env.REACT_APP_API_URL}/sign-up`;
 		const body = form;
 
 		try {

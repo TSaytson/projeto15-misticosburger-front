@@ -23,7 +23,7 @@ export default function LoginPage() {
         e.preventDefault()
         setIsLoading(true)
 
-        const URL = `${process.env.REACT_APP_API_URL}/signIn`;
+        const URL = `${process.env.REACT_APP_API_URL}/sign-in`;
 		const body = form;
 
 		try {

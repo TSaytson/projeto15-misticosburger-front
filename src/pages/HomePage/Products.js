@@ -24,11 +24,10 @@ const ProductsStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 
     img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
     }
 `

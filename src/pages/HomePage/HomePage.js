@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Products from './Products';
 import Header from './Header';
+import Footer from './Footer';
+import { UserContext } from "../../contexts/UserContext";
+import { useContext } from "react";
 
 export default function HomePage() {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { cart } = useContext(UserContext);
 
     useEffect(() => {
 
@@ -36,17 +40,7 @@ export default function HomePage() {
             <Products type="Combo" products={products} />
             <Products type="Bebida" products={products} />
             <Products type="Sobremesa" products={products} />
-
+            {cart.length >0 && <Footer />}
         </>
     );
 }
-
-const Home = styled.div`
-
-    display: flex;
-
-    img {
-        width: 100px;
-        height: 100px;
-    }
-`
